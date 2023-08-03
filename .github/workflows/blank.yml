@@ -12,7 +12,8 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  
+    inputs:
+      param1:
   
   repository_dispatch:
 
