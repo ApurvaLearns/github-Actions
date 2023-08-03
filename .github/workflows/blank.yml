@@ -35,7 +35,7 @@ jobs:
         
       - name: Print Parameters
         run: |
-          echo "Parameter 1: ${{ env.param1 }}"
+          echo "Parameter 1: ${{ github.event.inputs.param1  }}"
           echo "Param1: ${{ github.event.client_payload.param1 }}"
          
 
