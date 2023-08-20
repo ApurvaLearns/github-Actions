@@ -59,7 +59,7 @@ jobs:
 
       - name: Copy file inside conatiner
         run:
-          docker cp package.json my-container:/home
+          docker cp package.json my-container:/
 
       - name: Inspect container
         run:
