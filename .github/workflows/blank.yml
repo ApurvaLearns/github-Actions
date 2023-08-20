@@ -52,3 +52,7 @@ jobs:
       - name : Pull docker image
         run:
           docker pull jfrogtesting0308.jfrog.io/docker-local/nginx:latest
+
+       - name: Run conatiner
+         run:
+           docker run -d --name my-container jfrogtesting0308.jfrog.io/docker-local/nginx:latest
