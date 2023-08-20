@@ -72,8 +72,8 @@ jobs:
       - name: Inspect container
         run:
           docker exec my-container cat /etc/os-release
-          docker exec apt update -y
-          docker exec apt install npm -y
+          docker exec apt update 
+          docker exec apt install npm 
           
           
 
