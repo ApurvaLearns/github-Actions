@@ -61,11 +61,11 @@ jobs:
         run:
           docker cp package.json my-container:/home
 
-      - name : Inspect container
+      - name: Inspect container
         run:
           docker exec my-container ls /home
 
-      - name Inspect container
+      - name: Inspect container
         run:
           docker exec my-container cat /etc/os-release
 a
