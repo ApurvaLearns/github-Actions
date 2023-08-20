@@ -74,10 +74,10 @@ jobs:
           docker exec my-container cat /etc/os-release
       - name:  Run command
         run:
-          docker exec my-container apt update 
+          docker exec my-container sh -c "apt update -y"
       -  name: Run command
          run:
-          docker exec my-container apt install npm 
+          docker exec my-container sh -c "apt install npm -y"
           
           
 
