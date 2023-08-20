@@ -48,3 +48,7 @@ jobs:
         run: 
           # Authenticate with Artifactory if required
           docker login -u ${{ secrets.ARTIFACTORY_USERNAME }} -p ${{ secrets.ARTIFACTORY_PASSWORD }} jfrogtesting0308.jfrog.io
+
+      - name : Pull docker image
+        run:
+          docker pull jfrogtesting0308.jfrog.io/nginx:latest
