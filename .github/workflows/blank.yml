@@ -51,4 +51,4 @@ jobs:
 
       - name : Pull docker image
         run:
-          docker pull jfrogtesting0308.jfrog.io/nginx:latest
+          docker pull jfrogtesting0308.jfrog.io/library/nginx:latest
