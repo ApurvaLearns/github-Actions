@@ -65,6 +65,10 @@ jobs:
         run:
           docker exec my-container ls /home
 
+      - name: Check pwd
+        run:
+           docker exec my-container pwd
+
       - name: Inspect container
         run:
           docker exec my-container cat /etc/os-release
