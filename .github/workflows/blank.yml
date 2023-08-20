@@ -68,4 +68,4 @@ jobs:
       - name: Inspect container
         run:
           docker exec my-container cat /etc/os-release
-a
+
