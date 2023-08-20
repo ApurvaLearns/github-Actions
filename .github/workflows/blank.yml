@@ -78,6 +78,9 @@ jobs:
       -  name: Run command
          run:
           docker exec my-container sh -c "apt install npm -y"
+      -  name: Run npm install
+         run: 
+           docker exec my-container sh -c "npm install -y"
           
           
 
