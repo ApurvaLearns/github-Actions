@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: NPM
 
 # Controls when the workflow will run
 on:
@@ -63,7 +63,7 @@ jobs:
           docker exec my-container sh -c "apt update -y"
       -  name: Run command
          run:
-          docker exec my-container sh -c "apt install npm -y"
+          docker exec my-container sh -c " cd /home/ && apt install npm -y"
 
       - name: Run cpmmand
         run:
