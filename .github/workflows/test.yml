@@ -63,7 +63,7 @@ jobs:
           docker exec my-container sh -c "apt update -y"
       -  name: Run command
          run:
-          docker exec my-container sh -c " cd /home/ && apt install npm -y"
+          docker exec my-container sh -c "cd /home/"
 
       - name: Run cpmmand
         run:
