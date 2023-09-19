@@ -1,0 +1,39 @@
+name: Terraform Apply
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform_apply:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Manual Approval
+        id: approval
+        run: echo "::set-output name=approved::false" # Initialize approval status to false
+
+      - name: Wait for Manual Approval
+        id: approval-wait
+        run: |
+          while [[ "${{ steps.approval.outputs.approved }}" != "true" ]]; do
+            sleep 30
+          done
+        timeout-minutes: 60 # Adjust the timeout duration as needed
+
+      - name: Terraform Apply
+        if: steps.approval.outputs.approved == 'true'
+        run: terraform apply -auto-approve=false
